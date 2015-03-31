@@ -16,10 +16,7 @@ var serve = require("./lib/app"),
 
 module.exports = function(opts, callback) {
   var app = express().disable("x-powered-by"),
-      tilelive = require("tilelive-cache")(require("tilelive"), {
-        size: process.env.CACHE_SIZE || opts.cacheSize,
-        sources: process.env.SOURCE_CACHE_SIZE || opts.sourceCacheSize
-      });
+      tilelive = require("tilelive");
 
   callback = callback || function() {};
 
